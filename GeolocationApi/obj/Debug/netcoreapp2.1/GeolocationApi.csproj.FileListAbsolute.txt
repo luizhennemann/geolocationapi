@@ -1,0 +1,14 @@
+C:\Users\luizmarcelo\source\repos\GeolocationApi\GeolocationApi\bin\Debug\netcoreapp2.1\GeolocationApi.deps.json
+C:\Users\luizmarcelo\source\repos\GeolocationApi\GeolocationApi\bin\Debug\netcoreapp2.1\GeolocationApi.runtimeconfig.json
+C:\Users\luizmarcelo\source\repos\GeolocationApi\GeolocationApi\bin\Debug\netcoreapp2.1\GeolocationApi.runtimeconfig.dev.json
+C:\Users\luizmarcelo\source\repos\GeolocationApi\GeolocationApi\bin\Debug\netcoreapp2.1\GeolocationApi.dll
+C:\Users\luizmarcelo\source\repos\GeolocationApi\GeolocationApi\bin\Debug\netcoreapp2.1\GeolocationApi.pdb
+C:\Users\luizmarcelo\source\repos\GeolocationApi\GeolocationApi\obj\Debug\netcoreapp2.1\GeolocationApi.csprojAssemblyReference.cache
+C:\Users\luizmarcelo\source\repos\GeolocationApi\GeolocationApi\obj\Debug\netcoreapp2.1\GeolocationApi.csproj.CoreCompileInputs.cache
+C:\Users\luizmarcelo\source\repos\GeolocationApi\GeolocationApi\obj\Debug\netcoreapp2.1\GeolocationApi.RazorAssemblyInfo.cache
+C:\Users\luizmarcelo\source\repos\GeolocationApi\GeolocationApi\obj\Debug\netcoreapp2.1\GeolocationApi.RazorAssemblyInfo.cs
+C:\Users\luizmarcelo\source\repos\GeolocationApi\GeolocationApi\obj\Debug\netcoreapp2.1\GeolocationApi.AssemblyInfoInputs.cache
+C:\Users\luizmarcelo\source\repos\GeolocationApi\GeolocationApi\obj\Debug\netcoreapp2.1\GeolocationApi.AssemblyInfo.cs
+C:\Users\luizmarcelo\source\repos\GeolocationApi\GeolocationApi\obj\Debug\netcoreapp2.1\GeolocationApi.RazorTargetAssemblyInfo.cache
+C:\Users\luizmarcelo\source\repos\GeolocationApi\GeolocationApi\obj\Debug\netcoreapp2.1\GeolocationApi.dll
+C:\Users\luizmarcelo\source\repos\GeolocationApi\GeolocationApi\obj\Debug\netcoreapp2.1\GeolocationApi.pdb
