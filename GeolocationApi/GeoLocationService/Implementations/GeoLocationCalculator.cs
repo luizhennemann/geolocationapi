@@ -1,19 +1,18 @@
-﻿using System;
-using System.Drawing;
-using GeolocationApi.Enumerations;
+﻿using GeolocationApi.Enumerations;
 using GeolocationApi.GeoLocationService.Interfaces;
+using System;
 
 namespace GeolocationApi.GeoLocationService.Implementations
 {
     public class GeoLocationCalculator : IGeoLocationCalculator
     {
-        public double CaculateDistanceHaversine(PointF pointA, PointF pointB, MeasuringUnit measuringUnit)
+        public double CaculateDistanceHaversine(double latitudeA, double longitudeA, double latitudeB, double longitudeB, MeasuringUnit measuringUnit)
         {
-            double radiansLatitudeA = pointA.X * ToRadians();
-            double radiansLatitudeB = pointB.X * ToRadians();
+            double radiansLatitudeA = latitudeA * ToRadians();
+            double radiansLatitudeB = latitudeB * ToRadians();
 
             double degreesLatitudeHalf = (radiansLatitudeB - radiansLatitudeA) / 2;
-            double degreesLongitudeHalf = Math.PI * (pointB.Y - pointA.Y) / 360;
+            double degreesLongitudeHalf = Math.PI * (longitudeB - longitudeA) / 360;
 
             double tempResultA = Math.Sin(degreesLatitudeHalf);
             tempResultA *= tempResultA;
@@ -26,12 +25,12 @@ namespace GeolocationApi.GeoLocationService.Implementations
             return centralAngle * GetRadiusByMeasuringUnit(measuringUnit);
         }
 
-        public double CalculateDistanceSphericalLawOfCosines(PointF pointA, PointF pointB, MeasuringUnit measuringUnit)
+        public double CalculateDistanceSphericalLawOfCosines(double latitudeA, double longitudeA, double latitudeB, double longitudeB, MeasuringUnit measuringUnit)
         {
-            double radiansLatitudeA = pointA.X * ToRadians();
-            double radiansLatitudeB = pointB.X * ToRadians();
-            double radiansLongitudeA = pointA.Y * ToRadians();
-            double radiansLongitudeB = pointB.Y * ToRadians();
+            double radiansLatitudeA = latitudeA * ToRadians();
+            double radiansLatitudeB = latitudeB * ToRadians();
+            double radiansLongitudeA = longitudeA * ToRadians();
+            double radiansLongitudeB = longitudeB * ToRadians();
 
             double centralAngle = Math.Acos(Math.Sin(radiansLatitudeA) * Math.Sin(radiansLatitudeB) +
                     Math.Cos(radiansLatitudeA) * Math.Cos(radiansLatitudeB) * Math.Cos(radiansLongitudeB - radiansLongitudeA));
@@ -39,14 +38,14 @@ namespace GeolocationApi.GeoLocationService.Implementations
             return centralAngle * GetRadiusByMeasuringUnit(measuringUnit);
         }
 
-        public double CalculateEarthProjectionPythagoras(PointF pointA, PointF pointB, MeasuringUnit measuringUnit)
+        public double CalculateEarthProjectionPythagoras(double latitudeA, double longitudeA, double latitudeB, double longitudeB, MeasuringUnit measuringUnit)
         {
-            double radiansLatitudeA = pointA.X * ToRadians();
-            double radiasnLatitudeB = pointB.X * ToRadians();
-            double degreesLatitude = (radiasnLatitudeB - radiansLatitudeA);
-            double degreesLongitude = (pointB.Y - pointA.Y) * ToRadians();
+            double radiansLatitudeA = latitudeA * ToRadians();
+            double radiansLatitudeB = latitudeB * ToRadians();
+            double degreesLatitude = (radiansLatitudeB - radiansLatitudeA);
+            double degreesLongitude = (longitudeB - longitudeA) * ToRadians();
 
-            double tempResult = (degreesLongitude) * Math.Cos((radiansLatitudeA + radiasnLatitudeB) / 2);
+            double tempResult = (degreesLongitude) * Math.Cos((radiansLatitudeA + radiansLatitudeB) / 2);
 
             double centralAngle = Math.Sqrt(tempResult * tempResult + degreesLatitude * degreesLatitude);
 

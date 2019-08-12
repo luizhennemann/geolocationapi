@@ -1,14 +1,13 @@
 ﻿using GeolocationApi.Enumerations;
-using System.Drawing;
 
 namespace GeolocationApi.GeoLocationService.Interfaces
 {
     public interface IGeoLocationCalculator
     {
-        double CaculateDistanceHaversine(PointF pointA, PointF pointB, MeasuringUnit measuringUnit);
+        double CaculateDistanceHaversine(double latitudeA, double longitudeA, double latitudeB, double longitudeB, MeasuringUnit measuringUnit);
 
-        double CalculateDistanceSphericalLawOfCosines(PointF pointA, PointF pointB, MeasuringUnit measuringUnit);
+        double CalculateDistanceSphericalLawOfCosines(double latitudeA, double longitudeA, double latitudeB, double longitudeB, MeasuringUnit measuringUnit);
 
-        double CalculateEarthProjectionPythagoras(PointF pointA, PointF pointB, MeasuringUnit measuringUnit);
+        double CalculateEarthProjectionPythagoras(double latitudeA, double longitudeA, double latitudeB, double longitudeB, MeasuringUnit measuringUnit);
     }
 }

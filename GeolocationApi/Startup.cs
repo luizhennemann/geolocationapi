@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace GeolocationApi
 {
@@ -18,16 +19,17 @@ namespace GeolocationApi
             _configuration = configuration;
         }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<ILoggerFactory, LoggerFactory>();
             services.AddTransient<IGeoLocationCalculator, GeoLocationCalculator>();
 
+            services.AddSwaggerGen(s => s.SwaggerDoc("v1", 
+                new Info { Title = "Geo location Api", Description = "Calculates distance between two points in different ways." }));
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())
@@ -36,6 +38,8 @@ namespace GeolocationApi
             }
 
             app.UseMvc();
+            app.UseSwagger();
+            app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Geo location Api")); 
         }
     }
 }

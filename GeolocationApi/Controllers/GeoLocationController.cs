@@ -1,5 +1,5 @@
-﻿using GeolocationApi.GeoLocationService.Interfaces;
-using GeolocationApi.Models;
+﻿using GeolocationApi.Enumerations;
+using GeolocationApi.GeoLocationService.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using System;
@@ -19,15 +19,16 @@ namespace GeolocationApi.Controllers
             _logger = loggerFactory.CreateLogger<GeoLocationController>();
         }
 
-        [Route("calculatedistancehaversine")]
-        public ActionResult<double> CalculateDistanceHaversine([FromBody] DistanceTwoPointsRequest request)
+        [HttpGet]
+        [Route("CalculateDistanceHaversine/{latitudeA}/{longitudeA}/{latitudeB}/{longitudeB}/{measuringUnit}")]
+        public ActionResult<double> CalculateDistanceHaversine(double latitudeA, double longitudeA, double latitudeB, double longitudeB, string measuringUnit)
         {
             try
             {
-                _logger.LogInformation($"Calculating Distance Haversine between {request.PointA.X}, {request.PointA.Y} and {request.PointB.X}, {request.PointB.Y}");
+                _logger.LogInformation($"Calculating Distance Haversine between {latitudeA}, {longitudeA} and {latitudeB}, {longitudeB}");
 
                 var distance = _geoLocationCalculator
-                    .CaculateDistanceHaversine(request.PointA, request.PointB, request.MeasuringUnit);
+                    .CaculateDistanceHaversine(latitudeA, longitudeA, latitudeB, longitudeB, GetMeasuringUnitEnum(measuringUnit));
 
                 return Ok(distance);
             }
@@ -39,15 +40,16 @@ namespace GeolocationApi.Controllers
             return BadRequest();
         }
 
-        [Route("calculatedistancesphericallawofcosines")]
-        public ActionResult<double> CalculateDistanceSphericalLawOfCosines([FromBody] DistanceTwoPointsRequest request)
+        [HttpGet]
+        [Route("CalculateDistanceSphericalLawOfCosines/{latitudeA}/{longitudeA}/{latitudeB}/{longitudeB}/{measuringUnit}")]
+        public ActionResult<double> CalculateDistanceSphericalLawOfCosines(double latitudeA, double longitudeA, double latitudeB, double longitudeB, string measuringUnit)
         {
             try
             {
-                _logger.LogInformation($"Calculating Spherical Law of Cosines between {request.PointA.X}, {request.PointA.Y} and {request.PointB.X}, {request.PointB.Y}");
+                _logger.LogInformation($"Calculating Spherical Law of Cosines between {latitudeA}, {longitudeA} and {latitudeB}, {longitudeB}.");
 
                 var distance = _geoLocationCalculator
-                    .CalculateDistanceSphericalLawOfCosines(request.PointA, request.PointB, request.MeasuringUnit);
+                    .CalculateDistanceSphericalLawOfCosines(latitudeA, longitudeA, latitudeB, longitudeB, GetMeasuringUnitEnum(measuringUnit));
 
                 return Ok(distance);
             }
@@ -59,15 +61,16 @@ namespace GeolocationApi.Controllers
             return BadRequest();
         }
 
-        [Route("calculateearthprojectionpythagoras")]
-        public ActionResult<double> CalculateEarthProjectionPythagoras([FromBody] DistanceTwoPointsRequest request)
+        [HttpGet]
+        [Route("CalculateEarthProjectionPythagoras/{latitudeA}/{longitudeA}/{latitudeB}/{longitudeB}/{measuringUnit}")]
+        public ActionResult<double> CalculateEarthProjectionPythagoras(double latitudeA, double longitudeA, double latitudeB, double longitudeB, string measuringUnit)
         {
             try
             {
-                _logger.LogInformation($"Calculating Earth Projection Pythagoras between {request.PointA.X}, {request.PointA.Y} and {request.PointB.X}, {request.PointB.Y}");
+                _logger.LogInformation($"Calculating Earth Projection Pythagoras between {latitudeA}, {longitudeA} and {latitudeB}, {longitudeB}.");
 
                 var distance = _geoLocationCalculator
-                    .CalculateEarthProjectionPythagoras(request.PointA, request.PointB, request.MeasuringUnit);
+                    .CalculateEarthProjectionPythagoras(latitudeA, longitudeA, latitudeB, longitudeB, GetMeasuringUnitEnum(measuringUnit));
 
                 return Ok(distance);
             }
@@ -78,5 +81,7 @@ namespace GeolocationApi.Controllers
 
             return BadRequest();
         }
+
+        private static MeasuringUnit GetMeasuringUnitEnum(string measuringUnit) => (MeasuringUnit)Enum.Parse(typeof(MeasuringUnit), measuringUnit);
     }
 }
