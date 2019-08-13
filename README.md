@@ -12,7 +12,7 @@ This API offers three ways of calculating the distance between two points on the
 
 Source: https://en.wikipedia.org/wiki/Haversine_formula
 
-
+<br>
 #### Calculate Distance Spherical Law Of Cosines
 
 **According to Wikipedia:** "In spherical trigonometry, the law of cosines (also called the cosine rule for sides) is a theorem relating the sides and angles of spherical triangles, analogous to the ordinary law of cosines from plane trigonometry."
