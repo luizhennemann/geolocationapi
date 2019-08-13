@@ -14,7 +14,9 @@ Source: https://en.wikipedia.org/wiki/Haversine_formula
 
 **According to Wikipedia:** In spherical trigonometry, the law of cosines (also called the cosine rule for sides) is a theorem relating the sides and angles of spherical triangles, analogous to the ordinary law of cosines from plane trigonometry.
 
-Formula: {\displaystyle \cos C=-\cos A\cos B+\sin A\sin B\cos c\,}
+Formula: cos p = cos a cos b + sin a sin b cos φ
+
+Source: https://en.wikipedia.org/wiki/Spherical_law_of_cosines
 
 
 
