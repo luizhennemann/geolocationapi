@@ -12,7 +12,6 @@ This API offers three ways of calculating the distance between two points on the
 
 Source: https://en.wikipedia.org/wiki/Haversine_formula
 
-<br>
 #### Calculate Distance Spherical Law Of Cosines
 
 **According to Wikipedia:** "In spherical trigonometry, the law of cosines (also called the cosine rule for sides) is a theorem relating the sides and angles of spherical triangles, analogous to the ordinary law of cosines from plane trigonometry."
@@ -21,14 +20,11 @@ Formula: cos p = cos a cos b + sin a sin b cos φ
 
 Source: https://en.wikipedia.org/wiki/Spherical_law_of_cosines
 
-
 #### Calculate Earth Projection Pythagoras
 
 **According to Wikipedia:** "Geographical distance is the distance measured along the surface of the earth. The formulae in this article calculate distances between points which are defined by geographical coordinates in terms of latitude and longitude. This distance is an element in solving the second (inverse) geodetic problem."
 
 Source: http://en.wikipedia.org/wiki/Geographical_distance
-
-
 
 #### Techincal API Design
 
