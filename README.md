@@ -1,2 +1,5 @@
-# geolocationapi
-Calculates distance between two points.
+# ** Geo Location API **
+
+#### Calculates distance between two points.
+
+
