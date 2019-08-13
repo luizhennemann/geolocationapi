@@ -24,3 +24,12 @@ Source: https://en.wikipedia.org/wiki/Spherical_law_of_cosines
 Source: http://en.wikipedia.org/wiki/Geographical_distance
 
 
+
+#### Techincal API Design
+
+The API was build using C# .Net Core. There are two projects:
+
+1) The API exposure through a controller
+2) Integration tests and unit tests
+
+##### **P.S.: Also, the API can be tested using Swagger:** http://<ANY-HOST>/swagger
