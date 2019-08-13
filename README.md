@@ -1,6 +1,8 @@
 # **Geo Location API**
 ### Calculates distance between two points.
 
+*********************************************
+
 This API offers three ways of calculating the distance between two points on the surface of the Earth.
 
 #### Calculate Distance Haversine
@@ -32,4 +34,6 @@ The API was build using C# .Net Core. There are two projects:
 1) The API exposure through a controller
 2) Integration tests and unit tests
 
+*********************************************
 ##### **P.S.: Also, the API can be tested using Swagger. Once the API is up and running: http://YOUR-HOST/swagger**
+*********************************************
