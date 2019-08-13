@@ -5,11 +5,13 @@
 
 This API offers three ways of calculating the distance between two points on the surface of the Earth.
 
+
 #### Calculate Distance Haversine
 
 **According to Wikipedia:** "The haversine formula determines the great-circle distance between two points on a sphere given their longitudes and latitudes. Important in navigation, it is a special case of a more general formula in spherical trigonometry, the law of haversines, that relates the sides and angles of spherical triangles."
 
 Source: https://en.wikipedia.org/wiki/Haversine_formula
+
 
 #### Calculate Distance Spherical Law Of Cosines
 
@@ -18,6 +20,7 @@ Source: https://en.wikipedia.org/wiki/Haversine_formula
 Formula: cos p = cos a cos b + sin a sin b cos φ
 
 Source: https://en.wikipedia.org/wiki/Spherical_law_of_cosines
+
 
 #### Calculate Earth Projection Pythagoras
 
