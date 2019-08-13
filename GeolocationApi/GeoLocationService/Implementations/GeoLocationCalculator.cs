@@ -6,7 +6,7 @@ namespace GeolocationApi.GeoLocationService.Implementations
 {
     public class GeoLocationCalculator : IGeoLocationCalculator
     {
-        public double CaculateDistanceHaversine(double latitudeA, double longitudeA, double latitudeB, double longitudeB, MeasuringUnit measuringUnit)
+        public double CalculateDistanceHaversine(double latitudeA, double longitudeA, double latitudeB, double longitudeB, MeasuringUnit measuringUnit)
         {
             double radiansLatitudeA = latitudeA * ToRadians();
             double radiansLatitudeB = latitudeB * ToRadians();

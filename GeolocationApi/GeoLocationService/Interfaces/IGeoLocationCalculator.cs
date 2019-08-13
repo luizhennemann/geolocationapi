@@ -4,7 +4,7 @@ namespace GeolocationApi.GeoLocationService.Interfaces
 {
     public interface IGeoLocationCalculator
     {
-        double CaculateDistanceHaversine(double latitudeA, double longitudeA, double latitudeB, double longitudeB, MeasuringUnit measuringUnit);
+        double CalculateDistanceHaversine(double latitudeA, double longitudeA, double latitudeB, double longitudeB, MeasuringUnit measuringUnit);
 
         double CalculateDistanceSphericalLawOfCosines(double latitudeA, double longitudeA, double latitudeB, double longitudeB, MeasuringUnit measuringUnit);
 

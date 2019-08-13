@@ -28,7 +28,7 @@ namespace GeolocationApi.Controllers
                 _logger.LogInformation($"Calculating Distance Haversine between {latitudeA}, {longitudeA} and {latitudeB}, {longitudeB}");
 
                 var distance = _geoLocationCalculator
-                    .CaculateDistanceHaversine(latitudeA, longitudeA, latitudeB, longitudeB, GetMeasuringUnitEnum(measuringUnit));
+                    .CalculateDistanceHaversine(latitudeA, longitudeA, latitudeB, longitudeB, GetMeasuringUnitEnum(measuringUnit));
 
                 return Ok(distance);
             }

@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GeolocationApi</name>
+    </assembly>
+    <members>
+        <member name="T:GeolocationApi.Controllers.GeoLocationController">
+            <summary></summary>
+        </member>
+        <member name="M:GeolocationApi.Controllers.GeoLocationController.#ctor(GeolocationApi.GeoLocationService.Interfaces.IGeoLocationCalculator,Microsoft.Extensions.Logging.ILoggerFactory)">
+            <summary></summary>
+        </member>
+        <member name="M:GeolocationApi.Controllers.GeoLocationController.CalculateDistanceHaversine(System.Double,System.Double,System.Double,System.Double,System.String)">
+            <summary>
+            This request will calculate the distance haversine given between two points
+            http://en.wikipedia.org/wiki/Haversine_formula
+            </summary>
+        </member>
+        <member name="M:GeolocationApi.Controllers.GeoLocationController.CalculateDistanceSphericalLawOfCosines(System.Double,System.Double,System.Double,System.Double,System.String)">
+            <summary></summary>
+        </member>
+        <member name="M:GeolocationApi.Controllers.GeoLocationController.CalculateEarthProjectionPythagoras(System.Double,System.Double,System.Double,System.Double,System.String)">
+            <summary></summary>
+        </member>
+        <member name="T:GeolocationApi.GeoLocationService.Implementations.GeoLocationCalculator">
+            <summary></summary>
+        </member>
+        <member name="M:GeolocationApi.GeoLocationService.Implementations.GeoLocationCalculator.CaculateDistanceHaversine(System.Double,System.Double,System.Double,System.Double,GeolocationApi.Enumerations.MeasuringUnit)">
+            <summary></summary>
+        </member>
+        <member name="M:GeolocationApi.GeoLocationService.Implementations.GeoLocationCalculator.CalculateDistanceSphericalLawOfCosines(System.Double,System.Double,System.Double,System.Double,GeolocationApi.Enumerations.MeasuringUnit)">
+            <summary></summary>
+        </member>
+        <member name="M:GeolocationApi.GeoLocationService.Implementations.GeoLocationCalculator.CalculateEarthProjectionPythagoras(System.Double,System.Double,System.Double,System.Double,GeolocationApi.Enumerations.MeasuringUnit)">
+            <summary></summary>
+        </member>
+        <member name="T:GeolocationApi.GeoLocationService.Interfaces.IGeoLocationCalculator">
+            <summary></summary>
+        </member>
+        <member name="M:GeolocationApi.GeoLocationService.Interfaces.IGeoLocationCalculator.CaculateDistanceHaversine(System.Double,System.Double,System.Double,System.Double,GeolocationApi.Enumerations.MeasuringUnit)">
+            <summary></summary>
+        </member>
+        <member name="M:GeolocationApi.GeoLocationService.Interfaces.IGeoLocationCalculator.CalculateDistanceSphericalLawOfCosines(System.Double,System.Double,System.Double,System.Double,GeolocationApi.Enumerations.MeasuringUnit)">
+            <summary></summary>
+        </member>
+        <member name="M:GeolocationApi.GeoLocationService.Interfaces.IGeoLocationCalculator.CalculateEarthProjectionPythagoras(System.Double,System.Double,System.Double,System.Double,GeolocationApi.Enumerations.MeasuringUnit)">
+            <summary></summary>
+        </member>
+        <member name="T:GeolocationApi.Startup">
+            <summary></summary>
+        </member>
+        <member name="M:GeolocationApi.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary></summary>
+        </member>
+        <member name="M:GeolocationApi.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary></summary>
+        </member>
+        <member name="M:GeolocationApi.Startup.Configure(Microsoft.AspNetCore.Builder.IApplicationBuilder,Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
+            <summary></summary>
+        </member>
+    </members>
+</doc>
